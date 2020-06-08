@@ -3,7 +3,7 @@ import { getApiClient } from '@utils/apiUtils';
 import { getSongsData } from '../iTunesApi';
 
 describe('iTunesApi tests', () => {
-  const songName = 'mac';
+  const songName = 'hey';
   it('should make the api call to "/search?term="', async () => {
     const mock = new MockAdapter(getApiClient('itunes').axiosInstance);
     const data = [
