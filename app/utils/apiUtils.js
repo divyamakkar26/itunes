@@ -3,8 +3,11 @@ import mapKeysDeep from 'deep-map-keys';
 import { camelCase, snakeCase } from 'lodash';
 
 const { GITHUB_URL } = process.env;
+const { ITUNES_URL } = process.env;
+
 const apiClients = {
   github: null,
+  itunes: null,
   default: null
 };
 export const getApiClient = (type = 'github') => apiClients[type];
@@ -12,6 +15,9 @@ export const generateApiClient = (type = 'github') => {
   switch (type) {
     case 'github':
       apiClients[type] = createApiClientWithTransForm(GITHUB_URL);
+      return apiClients[type];
+    case 'itunes':
+      apiClients[type] = createApiClientWithTransForm(ITUNES_URL);
       return apiClients[type];
     default:
       apiClients.default = createApiClientWithTransForm(GITHUB_URL);
@@ -22,7 +28,8 @@ export const generateApiClient = (type = 'github') => {
 export const createApiClientWithTransForm = baseURL => {
   const api = create({
     baseURL,
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
+    mode: 'no-cors'
   });
   api.addResponseTransform(response => {
     const { ok, data } = response;

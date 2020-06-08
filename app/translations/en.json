@@ -1,11 +1,17 @@
 {
   "repo_list": "Repository List",
+  "song_list": "Song List",
   "repo_search": "Repository Search",
   "respo_search_default": "Search for a repository by entering it's name in the search box",
+  "song_search_default": "Search for a song by entering it's name in the search box",
   "get_repo_details": "Get details of repositories",
   "search_query": "Search query: {repoName}",
+  "search_query_song": "Search query: {songName}",
   "matching_repos": "Total number of matching repos: {totalCount}",
+  "matching_songs": "Total number of matching songs: {resultCount}",
   "something_went_wrong": "Sorry. Something went wrong! Please try again in sometime.",
   "stories": "Go to Storybook",
-  "wednesday_solutions": "Wednesday Solutions"
+  "wednesday_solutions": "Wednesday Solutions",
+  "iTunes_search": "iTunes Search",
+  "search_songs": "Search songs here"
 }
